@@ -17,6 +17,8 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.GenericHID;
 
+import static org.whsrobotics.robot.RobotMap.*;
+
 
 //The class robot is an extention of IterativeRobot
 
@@ -28,10 +30,7 @@ public class Robot extends IterativeRobot {
      which control the motors of the robot wheels
      */
 
-    private static final int LEFT_FRONT_TALON_PORT = 1;
-    private static final int RIGHT_FRONT_TALON_PORT = 2;
-    private static final int LEFT_BACK_TALON_PORT = 3;
-    private static final int RIGHT_BACK_TALON_PORT = 4;
+
 
 
     // Create WPI_TalonSRXs
