@@ -1,7 +1,8 @@
 /**
-* This is Sean Lendrum's original code
-* Based off of the code written by Lawrence Tseng
-* TimeStamp: Last edited: Jan 15 2018
+ * This is Sean Lendrum's original code
+ * Based off of the code written by Lawrence Tseng
+ * TimeStamp: Last edited: Jan 17 2018
+ * Robot Code 1.3
  */
 
 package org.whsrobotics.robot;
@@ -124,14 +125,24 @@ public class Robot extends IterativeRobot {
         if (isOperatorControl() && isEnabled()) {
             differentialDrive.arcadeDrive(xboxController.getY(GenericHID.Hand.kLeft), -xboxController.getX(GenericHID.Hand.kRight));
 
-            xboxController.getYButtonPressed();
 
-            if (xboxController.getYButtonPressed()){
+            //If "Y" is pressed, it will brake immediately
+
+            if (xboxController.getYButton()){
 
                 leftFront.setNeutralMode(NeutralMode.Brake);
                 rightFront.setNeutralMode(NeutralMode.Brake);
                 leftBack.setNeutralMode(NeutralMode.Brake);
                 rightBack.setNeutralMode(NeutralMode.Brake);
+
+                //If not, it will stay in coast
+
+            } else {
+
+                leftFront.setNeutralMode(NeutralMode.Coast);
+                rightFront.setNeutralMode(NeutralMode.Coast);
+                leftBack.setNeutralMode(NeutralMode.Coast);
+                rightBack.setNeutralMode(NeutralMode.Coast);
 
 
             }
